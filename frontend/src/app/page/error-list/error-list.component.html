@@ -1,0 +1,39 @@
+<mat-progress-spinner *ngIf="state==='load'" class="example-margin" [color]="'blue'" [mode]="'indeterminate'">
+    "Load Data"
+  </mat-progress-spinner>
+  <div *ngIf="state==='error'">
+    {{errorLoad|json}}
+  </div>
+  <table mat-table *ngIf="state==='success'" [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> id. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="data">
+      <th mat-header-cell *matHeaderCellDef> Data input. </th>
+      <td mat-cell *matCellDef="let element"> {{element.data}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="table">
+      <th mat-header-cell *matHeaderCellDef> Table input. </th>
+      <td mat-cell *matCellDef="let element"> {{element.table}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fileLoad">
+      <th mat-header-cell *matHeaderCellDef> fileLoad. </th>
+      <td mat-cell *matCellDef="let element"> {{element.fileLoad}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="error">
+      <th mat-header-cell *matHeaderCellDef> Error. </th>
+      <td mat-cell *matCellDef="let element"> {{element.error}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="selectedField"></tr>
+    <tr mat-row *matRowDef="let row; columns: selectedField;"></tr>
+  </table>
+  <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" [pageIndex]="pageIndex"
+    [showFirstLastButtons]="showFirstLastButtons" (page)="onPaginate($event)" aria-label="Select page">
+  </mat-paginator>

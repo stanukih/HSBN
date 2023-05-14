@@ -1,0 +1,21 @@
+<button type="button" [matMenuTriggerFor]="Login">Auth</button>
+<mat-menu #Login>
+    <a href="login">            
+        <menu mat-menu-item>Login</menu>
+    </a>
+    <a href="registration">            
+        <menu mat-menu-item>Registration</menu>
+    </a>
+    <a href="confirmationCode">            
+        <menu mat-menu-item>Confirmation of registration</menu>
+    </a>
+    <a href="passwordRecoveryRequest">            
+        <menu mat-menu-item>Password recovery request</menu>
+    </a>    
+    <a href="passwordRecovery">            
+        <menu mat-menu-item>Password recovery from code</menu>
+    </a>
+  </mat-menu>
+  <mat-card>
+<router-outlet></router-outlet>
+</mat-card>

@@ -1,0 +1,43 @@
+<form class="card-body" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-card-title>Reg</mat-card-title>
+    <div class="input-field">
+      <mat-card-subtitle>Email</mat-card-subtitle>
+      <input formControlName="email" id="email" type="email">
+      <div *ngIf="form.get('email')!.invalid && form.get('email')!.touched">
+        <small *ngIf="form.get('email')!.errors!['required']">
+          Required field
+        </small>
+        <small *ngIf="form.get('email')!.errors!['email']">
+          Invalid mail address
+        </small>
+      </div>
+    </div>
+    <div class="input-field">
+      <mat-card-subtitle>Password</mat-card-subtitle>
+      <span class="helper-text"></span>
+      <input formControlName="password" id="password" type="password">
+      <div *ngIf="form.get('password')!.invalid && form.get('password')!.touched">
+        <small *ngIf="form.get('password')!.errors!['required']">
+          Required field
+        </small>      
+        <small *ngIf="form.get('password')!.errors!['minlength']">
+          Password must be at least {{form.get('password')!.errors!['minlength']['requiredLength']}} characters
+        </small>
+      </div>
+    </div>
+    <div class="input-field">
+      <mat-card-subtitle>Admin key</mat-card-subtitle>
+      <span class="helper-text"></span>
+      <input formControlName="adminKey" id="adminKey" type="adminKey">
+      <div *ngIf="form.get('adminKey')!.invalid && form.get('adminKey')!.touched">
+        <small *ngIf="form.get('adminKey')!.errors!['required']">
+          Required field
+        </small>  
+      </div>
+    </div>
+    <br>
+    <button mat-button [disabled]="form.invalid || form.disabled" class="btn btn-primary" type="submit">Reg</button>
+    <div>
+      {{errorRequest}}
+    </div>
+</form>

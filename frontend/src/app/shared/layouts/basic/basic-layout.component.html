@@ -1,0 +1,32 @@
+<button type="button" [matMenuTriggerFor]="Menu">Menu</button>
+<mat-menu #Menu>
+    <a href="list_stantions">            
+        <menu mat-menu-item>List stantions</menu>
+    </a>
+    <a href="list_travels">            
+        <menu mat-menu-item>List travels</menu>
+    </a>    
+    <a href="stantion">            
+        <menu mat-menu-item>Station page</menu>
+    </a>
+    <div *ngIf="authorizedUser">
+        <a href="loadStantionsPack">            
+            <menu mat-menu-item>Loading Stantions from file</menu>
+        </a>
+        <a href="loadTravelsPack">            
+            <menu mat-menu-item>Loading Travels from file</menu>
+        </a>
+        <a href="list_errors">            
+            <menu mat-menu-item>List of errors when loading from a file</menu>
+        </a>
+        <a href="#" (click)="logout()">            
+            <menu mat-menu-item>Logout</menu>
+        </a>
+    </div>    
+    <a href="terms_of_use">            
+        <menu mat-menu-item>Site policy</menu>
+    </a>
+  </mat-menu>
+  <mat-card>    
+<router-outlet></router-outlet>
+</mat-card>

@@ -1,0 +1,7 @@
+.download-waiting-block{
+    height: 300px; // Тут высота блока
+    width: 100%; // Тут длина
+    background: linear-gradient(149deg, rgba(24,187,156,1) 0%, rgba(106,57,175,1) 42%, rgba(187,24,148,1) 72%, rgba(115,53,134,1) 100%);
+    animation: gradient 10s infinite linear; // 10s - скорость анимации
+    background-size: 400%; // Можно менять и подбирать интенсивность
+}

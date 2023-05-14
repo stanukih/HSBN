@@ -1,0 +1,40 @@
+
+<mat-form-field *ngIf="load" appearance="fill">
+    <mat-label>Change stantion</mat-label>
+    <mat-select [(value)]="selectedStantion" (selectionChange)="loadDataFromCange()">
+      <mat-option *ngFor="let stantion of stantions" [value]="stantion.id" >
+        {{stantion.name}} 
+      </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<mat-progress-spinner *ngIf="state==='load'" class="example-margin" [color]="'blue'" [mode]="'indeterminate'">
+  "Load Data"
+</mat-progress-spinner>
+<div *ngIf="state==='error'">
+  {{errorLoad|json}}
+</div>
+<div *ngIf="state==='success'">
+<!-- <table>;<tr>
+  <th> -->
+  <div>Id: {{stantionData.id}} </div>
+  <div>Nimi: {{stantionData.nimi}}</div> 
+  <div>Namn: {{stantionData.namn}}</div> 
+  <div>Namn: {{stantionData.name}}</div> 
+  <div>Osoite: {{stantionData.osoite}}</div> 
+  <div>Adress: {{stantionData.adress}}</div> 
+  <div>Kaupunki: {{stantionData.kaupunki}}</div> 
+  <div>Stad: {{stantionData.stad}}</div> 
+  <div>Operaattor: {{stantionData.operaattor}}</div> 
+  <div>Kapasiteet: {{stantionData.kapasiteet}}</div> 
+  <div>Trips from the station: {{stantionTravels.departures_count}}</div> 
+  <div>Trips to the station: {{stantionTravels.returns_count}}</div> 
+  <div>Trips from the station per month: {{stantionTravels.departures_last_month}}</div> 
+  <div>Trips to the stationper month: {{stantionTravels.returns_last_month}}</div> 
+<!-- </th>
+<th> -->
+  <hsb-map [positionX]="stantionData.positionX" [positionY]="stantionData.positionY"></hsb-map>
+<!-- </th>
+</tr>
+</table> -->
+</div>
