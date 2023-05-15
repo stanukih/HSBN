@@ -7,7 +7,7 @@
     "i-all-dep":"npm run i-all-dep --prefix ../",
     "install-dependencies":"npm install && npm run compile",
     "compile":"tsc",
-    "start":"nodemon ./build/backend/index.js",
+    "start":"NODE_ENV=production PORT=5000 nodemon ./build/backend/index.js",
     "start-server": "npm run start"
   },
   "author": "",
