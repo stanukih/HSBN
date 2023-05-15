@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "Back from project kahoot-like",
   "main": "index.js",
+  "engines":{
+  "node":"18.16.0",
+  "npm":"9.6.6"
+  },
   "scripts": {
-
-    "i-all-dep": "npm run install-dependencies --prefix ./backend && npm run install-dependencies --prefix ./frontend",
+    "i-all-dep": "npm run install-dependencies --prefix ./backend && npm run install-dependencies --prefix ./frontend&&npm install&& npm run ng build --prefix ./frondend",
     "client": "npm run start-client --prefix ./frontend",
     "server": "npm run start-server --prefix ./backend",
     "start-all": "concurrently \"npm run server\" \"npm run client\""

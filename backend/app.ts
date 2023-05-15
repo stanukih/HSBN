@@ -57,12 +57,11 @@ app.use('/api/auth', authRouter)
 app.use('/api/stantions', stantionRouter)
 app.use('/api/travels', travelRouter)
 if (process.env["NODE_ENV"]){
-  console.log("bobs")
   app.use(express.static('../frontend/dist/client'))
   app.get('*',(_req,res)=>{
     res.sendFile(
       path.resolve(
-        __dirname,'..','frontend','dist','client','index.html'
+        __dirname, '../../../','frontend','dist','client','index.html'
       ))
   })
 }
