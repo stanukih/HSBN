@@ -1,7 +1,7 @@
 The project requires nodejs v18.12.1 to work.
 To work, you must have a zoho.com account and generate an application key to send mail.
 To work, you must have the postgresql database server installed.
-To run, you need to:
+To install, you need to:
     1) Clone the repository.
     2) Open file appSettings.json (puth ./shared/config/)
     3) Enter values
@@ -33,4 +33,23 @@ To run, you need to:
         "target": Specify backend server address and port. Default: "http://localhost:5000",
     }
     9) While in the project run the command "npm run i-all-dep"
+    10) While in the frontend folder run the command "npm run ng build"
+    11) While in the backend folder run the command "npm run compile"
+
+
+    To install, you need to:
+    1) While in the backend folder run the command  "npm run start-server"
+    2) After the first run, you need to set the install:false value in the ./shared/config/ file and while in the frontend folder run the command "npm run ng build"
+
+
+    To update, you need to:
+    1) Save settings files.
+    2) Sync with git repository.
+    3) Restore settings files.
+    4) While in the project run the command "npm run i-all-dep"
+    5) While in the frontend folder run the command "npm run ng build"
+    6) While in the backend folder run the command "npm run compile"
+    When upgrading, other steps are possible, so you need to check the installation order in change.log
+
+
 
